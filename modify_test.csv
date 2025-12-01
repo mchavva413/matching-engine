@@ -1,0 +1,15 @@
+# Add a bunch of resting orders
+N,10,B,100,10
+N,11,B,100,5
+N,12,S,105,8
+N,13,S,106,4
+P
+# Modify qty (no price change) -> keeps position but we remove+readd to tail (see note)
+M,10,100,20
+P
+# Modify price -> moves to new price level tail
+M,11,101,5
+P
+# Decrease qty to 0 -> cancel
+M,12,105,0
+P
